@@ -18,16 +18,15 @@ class UpgradeError(Exception):
     __str__ = __repr__
 
 
-"""
-Copy this template and complete to add your macro
+class vn32_t669(MacroUpgrade):
+    # Upgrade macro for 669 by John Rostron
 
-class vnXX_txxx(MacroUpgrade):
-    # Upgrade macro for <TICKET> by <Author>
-
-    BEFORE_TAG = "vnX.X"
-    AFTER_TAG = "vnX.X_txxx"
+    BEFORE_TAG = "vn3.2"
+    AFTER_TAG = "vn3.2_t669"
 
     def upgrade(self, config, meta_config=None):
         # Add settings
+        # Set default value to previous constant values
+        self.add_setting(config, ["namelist:convection","eff_dcff"],"3.0")
+        self.add_setting(config, ["namelist:convection","eff_dcfl"],"1.0")
         return config, self.reports
-"""

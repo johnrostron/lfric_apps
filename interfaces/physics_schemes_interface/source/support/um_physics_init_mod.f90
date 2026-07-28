@@ -149,6 +149,8 @@ module um_physics_init_mod
                                         ent_fac_sh_in => ent_fac_sh,         &
                                         thpixs_mid_in => thpixs_mid,         &
                                         c_mass_sh_in => c_mass_sh,           &
+                                        eff_dcfl_in => eff_dcfl,             &
+                                        eff_dcff_in => eff_dcff,             &
                                 l_conv_prog_dtheta_in => l_conv_prog_dtheta, &
                                      l_conv_prog_dq_in => l_conv_prog_dq,    &
                                      par_gen_mass_fac_in => par_gen_mass_fac, &
@@ -946,8 +948,8 @@ contains
         cpress_term         = cpress_term_in
         dd_opt              = 1
         deep_cmt_opt        = 6
-        eff_dcff            = 3.0_r_um
-        eff_dcfl            = 1.0_r_um
+        eff_dcff            = eff_dcff_in
+        eff_dcfl            = eff_dcfl_in
         efrac               = efrac_in
         ent_dp_power        = 1.00_r_um
         ent_fac_md          = 1.00_r_um
