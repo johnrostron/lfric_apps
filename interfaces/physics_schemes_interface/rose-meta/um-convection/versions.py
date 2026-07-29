@@ -19,7 +19,7 @@ class UpgradeError(Exception):
 
 
 class vn32_t669(MacroUpgrade):
-    # Upgrade macro for 669 by John Rostron
+    # Upgrade macro for #669 by John Rostron
 
     BEFORE_TAG = "vn3.2"
     AFTER_TAG = "vn3.2_t669"

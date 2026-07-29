@@ -123,6 +123,8 @@ prog_ent_min=0.3,
 qlmin=4.0e-4,
 r_det=0.5,
 thpixs_mid=0.5,
+eff_dcff=3.0,
+eff_dcfl=1.0,
 /
 &cosp
 l_cosp=.false.,
