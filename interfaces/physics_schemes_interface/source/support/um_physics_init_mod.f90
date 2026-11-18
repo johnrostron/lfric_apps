@@ -192,7 +192,10 @@ module um_physics_init_mod
                                         update_precfrac_opt_homog,           &
                                         update_precfrac_opt_correl,          &
                                         heavy_rain_evap_fac_in =>            &
-                                                heavy_rain_evap_fac
+                                                heavy_rain_evap_fac,         &
+                                        x1r_in => x1r,                       &
+                                        ar_in => ar,                         &
+                                        mp_tau_lim_in => mp_tau_lim
 
   use mixing_config_mod,         only : smagorinsky,                 &
                                         mixing_method => method,     &
@@ -1253,11 +1256,11 @@ contains
     cx(84)         = 1.0_r_um
     constp(35)     = 1.0_r_um
     mp_czero       = 10.0_r_um
-    mp_tau_lim     = 1200.0_r_um
+    mp_tau_lim     = mp_tau_lim_in
     ! The following are needed for the visibility diagnostic, hence we
     ! initialise them even when microphysics isn't used.  They are used in
     ! beta_precip which can still have convective rain/snow.
-    x1r            = 2.2000e-1_r_um
+    x1r            = x1r_in
     x2r            = 2.2000_r_um
     ! The following are also needed by COSP. They are initialised here but
     ! may be reset within microphysics.
@@ -1329,7 +1332,7 @@ contains
 
         a_ratio_exp    = real(a_ratio_exp_in, r_um)
         a_ratio_fac    = real(a_ratio_fac_in, r_um)
-        ar             = 1.00_r_um
+        ar             = ar_in
         c_r_correl     = real(c_r_correl_in, r_um)
         ci_input       = real(ci_input_in, r_um)
         cic_input      = real(cic_input_in, r_um)
